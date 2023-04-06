@@ -2,6 +2,11 @@
   <div class="project">
     <div class="actions">
      <h3  @click="showDetails =!showDetails" >{{ project.title }}</h3>
+     <div class="icons">
+        <span class="material-icons">edit</span>
+        <span class="material-icons">delete</span>
+        <span class="material-icons">done</span>
+     </div>
 
     </div>
     <div class="details"  v-if="showDetails">
@@ -44,5 +49,27 @@ h3{
     color: #333;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
+}
+.actions{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+}
+.material-icons{
+    font-size: 22px;
+    color: #27ae60;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+.material-icons:hover{
+    color: #2ecc71;
 }
 </style>
