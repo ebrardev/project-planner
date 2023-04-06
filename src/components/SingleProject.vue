@@ -1,11 +1,11 @@
 <template>
-  <div class="project">
+  <div class="project" :class=" {complete:project.complete}">
     <div class="actions">
      <h3  @click="showDetails =!showDetails" >{{ project.title }}</h3>
      <div class="icons">
         <span class="material-icons">edit</span>
         <span @click="deleteProject" class="material-icons">delete</span>
-        <span class="material-icons">done</span>
+        <span @click="toggleComplete" class="material-icons tick" >done</span>
      </div>
 
     </div>
@@ -31,6 +31,18 @@ export default {
                 .then(()=>this.$emit('delete',this.project.id))
          
         },
+        toggleComplete(){
+            fetch(this.uri,{
+                method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'  },
+              body: JSON.stringify({
+                complete: !this.project.complete}),
+            }).then(()=>this.$emit('complete',this.project.id)
+            ).catch(err=>console.log(err))
+      
+             
+        }
     },
     
 
@@ -48,7 +60,7 @@ export default {
     box-sizing: border-box;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
-    border-left: 4px solid green;
+    border-left: 4px solid purple;
 }
 h3{
     font-size: 20px;
@@ -72,7 +84,7 @@ h3{
 }
 .material-icons{
     font-size: 22px;
-    color: #27ae60;
+    color: gray;
     cursor: pointer;
     margin-left: 10px;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -80,5 +92,15 @@ h3{
 }
 .material-icons:hover{
     color: #e74c3c;
+}
+.project.complete{
+    border-left: 4px solid green;
+}
+.project.complete .tick{
+    font-size: 22px;
+    color: #27ae60;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 </style>
