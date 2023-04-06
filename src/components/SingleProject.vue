@@ -1,0 +1,48 @@
+<template>
+  <div class="project">
+    <div class="actions">
+     <h3  @click="showDetails =!showDetails" >{{ project.title }}</h3>
+
+    </div>
+    <div class="details"  v-if="showDetails">
+        <p>{{ project.details }}</p>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+    props: ['project'],
+    data() {
+        return{
+            showDetails: false
+        }
+    }
+    
+
+}
+</script>
+
+<style>
+.project{
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    border-left: 4px solid green;
+}
+h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+}
+</style>
