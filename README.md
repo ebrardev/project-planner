@@ -1,4 +1,5 @@
 # project-planner
+# a beginner vue project
 
 ## Project setup
 ```
