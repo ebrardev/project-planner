@@ -1,14 +1,12 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/add">Project</router-link>
-  </nav>
+  <Navbar/>
   <router-view/>
 </template>
 
 <script>
+ import Navbar from './components/Navbar'
    export default{
-    components: {}
+    components: {Navbar},
    }
 </script>
 <style>
