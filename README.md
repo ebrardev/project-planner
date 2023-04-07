@@ -1,6 +1,8 @@
 # project-planner
 # a beginner vue project
 
+![](https://cdn.discordapp.com/attachments/860256092541157380/1093874624653176943/image.png)
+
 ## Project setup
 ```
 yarn install
