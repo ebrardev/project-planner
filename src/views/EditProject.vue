@@ -1,5 +1,5 @@
 <template>
-  <form  >
+  <form @submit.prevent="handleSubmit"  >
     <label>Title:</label>
     <input type="text" v-model="title" placeholder="Project Title" required />
     <label>Description:</label>
@@ -28,6 +28,15 @@ export default {
   .catch((error) => {
     console.log(error);
   });
+  },
+  methods:{
+    handleSubmit(){
+      axios.put(this.uri, {
+        title: this.title,
+        details: this.details
+      }).then(()=>this.$router.push('/')
+      ).catch(err=>console.log(err))
+    }
   }
 
 }
