@@ -70,38 +70,19 @@ label{
 
 }
 input {
-  border: 1px solid black; ;
-  border-radius: 4px;
   padding: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  text-align: left;
-  /* text-transform: uppercase; */
-  letter-spacing: 1px;
-  line-height: 24px;
+  border: 0;
+  border-bottom: 2px solid green;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
 }
 textarea{
-  border: 1px solid black;;
-  border-radius: 4px;
+  border: 2px solid green;
   padding: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  text-align: left;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  line-height: 24px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px;
   outline: none;
 }
 button{
