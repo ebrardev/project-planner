@@ -11,7 +11,7 @@ export default {
     props:['current'],
     methods:{
         updateFilter(by){
-            this.$emit("filterChange")
+            this.$emit("filterChange",by)
         }
     }
 
@@ -19,6 +19,16 @@ export default {
 </script>
 
 <style>
+
+.filter-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
 
 .ebrar-a{
     background-color: blue;
@@ -34,8 +44,36 @@ export default {
     outline: none;
 
 }
+.ebrar-a.active{
+    background-color: rgb(8, 8, 112);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    outline: none;
+
+}
 .ebrar-b{
     background-color: green;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    outline: none;
+
+}
+.ebrar-b.active{
+    background-color: rgb(3, 85, 3);
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     cursor: pointer;
@@ -63,6 +101,20 @@ export default {
 
 }
 
+.ebrar-c.active{
+    background-color: rgb(184, 7, 7);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    outline: none;
+
+}
 .ebrar-a:hover{
     background-color: blue;
     padding: 0.5rem 1rem;

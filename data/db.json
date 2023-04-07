@@ -3,12 +3,13 @@
     {
       "title": "kara tren gecikir",
       "details": "that what she said",
-      "id": 2
+      "id": 2,
+      "complete": true
     },
     {
       "title": "körolası ",
       "details": "suzan suzi",
-      "complete": false,
+      "complete": true,
       "id": 3
     },
     {
