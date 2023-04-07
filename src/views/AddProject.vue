@@ -18,9 +18,21 @@ export default {
  },
  methods:{
   handleSubmit(){
-
+ let project ={
+  title: this.title,
+  details: this.details,
+  complete:false
+ }
+ fetch('http://localhost:3000/projects',{
+  method: 'POST',
+  headers: {
+   'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(project)
+ }).then(()=>this.$router.push('/')
+ ).catch(err=>console.log(err))
  
-  console.log(this.title,this.details)
+
 }
  }
 }
@@ -44,9 +56,9 @@ label{
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: bold;
-  color: #333;
+  color: #b3b2b2;
   text-align: left;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 1px;
   line-height: 24px;
   margin-bottom: 10px;
@@ -58,7 +70,7 @@ label{
 
 }
 input {
-  border: none ;
+  border: 1px solid black; ;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
@@ -70,12 +82,12 @@ input {
   font-weight: bold;
   color: #333;
   text-align: left;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   letter-spacing: 1px;
   line-height: 24px;
 }
 textarea{
-  border: none;
+  border: 1px solid black;;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
