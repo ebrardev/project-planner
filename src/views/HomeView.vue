@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <FilterNav  @filterChange="current=$event" :current="current"/> 
    <div v-if="projects.length">
     <div v-for="project in projects" :key="project.id">
        
@@ -21,16 +22,19 @@
 
 import axios from 'axios';
 import SingleProject from '../components/SingleProject.vue';
+import FilterNav from '../components/FilterNav.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    SingleProject
+    SingleProject,
+    FilterNav
 
   },
   data(){
     return {
-      projects:[]
+      projects:[],
+      current:'all'
   }
 },
   mounted(){
